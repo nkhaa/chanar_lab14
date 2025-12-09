@@ -11,7 +11,7 @@ on:
       - 'release/*'
 
 jobs:
-  build-and-test:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -24,11 +24,5 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-      - name: Checkstyle шалгах
-        run: mvn -B checkstyle:check
-
-      - name: JUnit тест ба JaCoCo coverage шалгах
-        run: mvn -B test jacoco:check
-
-      - name: JaCoCo тайлан үүсгэх
-        run: mvn -B jacoco:report
+      - name: Build, Test, Checkstyle, JaCoCo бүрэн шалгалт
+        run: mvn -B clean verify
