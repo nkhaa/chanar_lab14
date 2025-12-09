@@ -33,5 +33,12 @@ class MultiplicationTest {
         assertEquals(20, m.multiply(4, 5));
     }
 
+    @Test
+    void testLargeSecondParameterThrowsException() {
+        Multiplication m = new Multiplication();
+        assertThrows(IllegalArgumentException.class, () -> m.multiply(5, 20001));
+    }
+
+
 
 }
