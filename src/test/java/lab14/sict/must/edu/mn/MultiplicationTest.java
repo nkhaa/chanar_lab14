@@ -27,4 +27,11 @@ class MultiplicationTest {
         assertThrows(IllegalArgumentException.class, () -> m.multiply(20000, 2));
     }
 
+    @Test
+    void testNormalMultiplication() {
+        Multiplication m = new Multiplication();
+        assertEquals(20, m.multiply(4, 5));
+    }
+
+
 }
